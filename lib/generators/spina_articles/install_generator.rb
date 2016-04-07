@@ -16,7 +16,7 @@ module SpinaArticles
       end
 
       def copy_migration_file
-        migration_template "create_spina_articles_table.rb", Rails.root.join("db/migrate/create_spina_articles_table.rb")
+        migration_template "create_spina_articles_tables.rb", Rails.root.join("db/migrate/create_spina_articles_tables.rb")
       end
 
     end

@@ -7,9 +7,9 @@ require "spina/articles/version"
 Gem::Specification.new do |s|
   s.name        = "spina-articles"
   s.version     = Spina::Articles::VERSION
-  s.authors     = ["Dan Mitchell"]
-  s.email       = ["dan@digitalreflow.co.uk"]
-  s.homepage    = "http://www.digitalreflow.com"
+  s.authors     = ["Design Collective"]
+  s.email       = ["info@designcollective.io"]
+  s.homepage    = "http://www.designcollective.io"
   s.summary     = "News/Blog plugin for Spina"
   s.description = "Plugin for Spina CMS to include a news or blog on your website"
 

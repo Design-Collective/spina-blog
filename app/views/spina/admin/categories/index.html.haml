@@ -1,0 +1,12 @@
+.filters
+  %span{data: {dropdown: true}}
+    = link_to spina.new_admin_category_path, class: 'button button-primary' do
+      = icon('plus')
+      New Category
+
+.dd#pages_list
+  - if @categories.any?
+    %ol.dd-list
+      = render partial: 'category', collection: @categories
+  - else
+    %em No categories yet

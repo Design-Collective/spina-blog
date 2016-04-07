@@ -1,0 +1,25 @@
+= form_for [spina, :admin, @category], html: { autocomplete: "off" } do |f|
+  - content_for :notification_alert do
+    = error_explanation!(@category)
+
+  #page_content.tab-content.active
+    .table-container
+      %table.table.table-form
+        %tr
+          %td
+            Title
+          %td
+            = f.text_field :title
+        %tr
+          %td
+            Description
+          %td
+            = render 'spina/admin/shared/rich_text_field', form: f, field: :description
+
+  %button.button.button-primary{ type: 'submit', data: { icon: 'o' } }
+    Save category
+
+  = link_to "Cancel", spina.admin_categories_path, class: 'button button-link'
+
+  - unless @category.new_record?
+    .pull-right= link_to "Delete", spina.admin_category_path(@category), method: :delete, data: {confirm: "Are you sure you want to remove this category?"}, class: 'button button-link button-danger'

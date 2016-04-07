@@ -12,31 +12,24 @@
             = f.text_field :title
         %tr
           %td
-            Slug
+            Subtitle
           %td
-            = f.text_field :slug, placeholder: "URL of the article"
+            = f.text_field :subtitle
         %tr
           %td
-            Teaser
-            %small
-              Summary of the article that will appear on the listings page
+            Content
           %td
-            = f.text_area :teaser
+            = render 'spina/admin/shared/rich_text_field', form: f, field: :content
         %tr
           %td
-            Body
+            Select category
           %td
-            = render 'spina/admin/shared/rich_text_field', form: f, field: :body
+            = f.collection_select :spina_category_id, Spina::Category.all, :id, :title, prompt: true
         %tr
           %td
             Publish date
           %td
             = f.text_field :publish_date, value: (@article.publish_date.strftime("%d-%m-%Y") unless @article.new_record?), class: 'datepicker'
-        %tr
-          %td
-            Author
-          %td
-            = f.text_field :author
         %tr
           %td
             Draft?
@@ -49,4 +42,4 @@
   = link_to "Cancel", spina.admin_articles_path, class: 'button button-link'
 
   - unless @article.new_record?
-    .pull-right= link_to "Delete", spina.admin_article_path(@article), method: :delete, confirm: "Are you sure you want to remove this article?", class: 'button button-link button-danger'
+    .pull-right= link_to "Delete", spina.admin_article_path(@article), method: :delete, data: {confirm: "Are you sure you want to remove this article?"}, class: 'button button-link button-danger'
