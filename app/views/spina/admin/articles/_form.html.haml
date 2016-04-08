@@ -22,6 +22,11 @@
             = render 'spina/admin/shared/rich_text_field', form: f, field: :content
         %tr
           %td
+            Header photo
+          %td
+            = f.file_field :header_photo
+        %tr
+          %td
             Select category
           %td
             = f.collection_select :spina_category_id, Spina::Category.all, :id, :title, prompt: true
