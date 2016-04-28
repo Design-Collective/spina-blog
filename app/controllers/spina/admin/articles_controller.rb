@@ -57,7 +57,9 @@ module Spina
       end
 
       def article_params
-        params.require(:article).permit(:title, :subtitle, :content, :draft, :publish_date, :spina_category_id, :header_photo)
+        params.require(:article).permit(:title, :subtitle, :content, :draft,
+                                        :publish_date, :spina_category_id,
+                                        :header_photo, :seo_title, :meta_description)
       end
     end
   end

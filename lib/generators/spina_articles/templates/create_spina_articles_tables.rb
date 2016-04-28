@@ -7,6 +7,8 @@ class CreateSpinaArticlesTables < ActiveRecord::Migration
       t.date :publish_date
       t.boolean :draft, default: true
       t.string :header_photo
+      t.string :seo_title
+      t.string :meta_description
       t.references :spina_category
       t.timestamps
     end

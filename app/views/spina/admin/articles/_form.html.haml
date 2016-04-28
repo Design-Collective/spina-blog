@@ -22,9 +22,19 @@
             = render 'spina/admin/shared/rich_text_field', form: f, field: :content
         %tr
           %td
+            SEO title
+          %td
+            = f.text_field :seo_title
+        %tr
+          %td
+            Meta description
+          %td
+            = f.text_field :meta_description
+        %tr
+          %td
             Header photo
           %td
-            = f.file_field :header_photo
+            = f.file_field :header_photo, accept: 'image/png,image/gif,image/jpeg'
         %tr
           %td
             Select category

@@ -19,6 +19,10 @@ module SpinaArticles
         migration_template "create_spina_articles_tables.rb", Rails.root.join("db/migrate/create_spina_articles_tables.rb")
       end
 
+      def run_migrations
+        rake 'db:migrate'
+      end
+
     end
   end
 end
