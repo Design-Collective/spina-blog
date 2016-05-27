@@ -34,6 +34,9 @@
           %td
             Header photo
           %td
+            - if f.object.header_photo && f.object.header_photo.file.present?
+              .image
+                = image_tag f.object.header_photo.thumb
             = f.file_field :header_photo, accept: 'image/png,image/gif,image/jpeg'
         %tr
           %td
