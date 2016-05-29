@@ -16,6 +16,12 @@ module Spina
         plugin.config = Articles.config
         ::Spina.register_plugin(plugin)
       end
+
+      config.after_initialize do
+        # Since in routes.rb we are using prepend, we need to reload routes
+        # Otherwise, spina's /*id routes will prevent us to ever get to our routes
+        Rails.application.routes_reloader.reload!
+      end
     end
   end
 end
